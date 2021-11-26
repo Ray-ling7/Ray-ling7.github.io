@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>hexo+github搭建个人博客网站问题汇总和解决方法 | Presented By Ray-ling7</title><meta name="keywords" content="Hexo"><meta name="author" content="Ray-ling7"><meta name="copyright" content="Ray-ling7"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="分享B站教程：【2021最新版】保姆级Hexo+github搭建个人博客_哔哩哔哩_bilibili 本人在使用hexo + github搭建个人博客网站的过程中也是一步一个bug做过来，几乎每一步都有error，一路修复，在最后换主题的那一步始终都无法同步本地的css样式到网站上；所以干脆删掉了整个blog文件夹整个重新做了一遍，才算是成功部署；这过程中一些记忆较深的Error也就记录了下来，并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo+github搭建个人博客网站问题汇总和解决方法">
+<meta property="og:url" content="http://example.com/2021/11/26/hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/index.html">
+<meta property="og:site_name" content="Presented By Ray-ling7">
+<meta property="og:description" content="分享B站教程：【2021最新版】保姆级Hexo+github搭建个人博客_哔哩哔哩_bilibili 本人在使用hexo + github搭建个人博客网站的过程中也是一步一个bug做过来，几乎每一步都有error，一路修复，在最后换主题的那一步始终都无法同步本地的css样式到网站上；所以干脆删掉了整个blog文件夹整个重新做了一遍，才算是成功部署；这过程中一些记忆较深的Error也就记录了下来，并">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/blogb.jpg">
+<meta property="article:published_time" content="2021-11-26T03:41:17.225Z">
+<meta property="article:modified_time" content="2021-11-26T03:27:53.643Z">
+<meta property="article:author" content="Ray-ling7">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Solution">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/blogb.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/11/26/hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'hexo+github搭建个人博客网站问题汇总和解决方法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-26 11:27:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.i7GYb_vDEcvXOqLFJyobtgHaGL?w=231&amp;h=193&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.25&amp;pid=1.7" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/blogb.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Presented By Ray-ling7</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">hexo+github搭建个人博客网站问题汇总和解决方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-11-26T03:41:17.225Z" title="Created 2021-11-26 11:41:17">2021-11-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-11-26T03:27:53.643Z" title="Updated 2021-11-26 11:27:53">2021-11-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Hexo/">Hexo</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Hexo/Solution/">Solution</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="hexo+github搭建个人博客网站问题汇总和解决方法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>分享B站教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1mU4y1j72n?spm_id_from=333.999.0.0">【2021最新版】保姆级Hexo+github搭建个人博客_哔哩哔哩_bilibili</a></p>
+<p>本人在使用hexo + github搭建个人博客网站的过程中也是一步一个bug做过来，几乎每一步都有error，一路修复，在最后换主题的那一步始终都无法同步本地的css样式到网站上；所以干脆删掉了整个blog文件夹整个重新做了一遍，才算是成功部署；这过程中一些记忆较深的Error也就记录了下来，并且收录了网上搜索到的一些可行方案，大家也能少被水帖浪费时间。</p>
+<h5 id="几个需要注意的细节："><a href="#几个需要注意的细节：" class="headerlink" title="几个需要注意的细节："></a>几个需要注意的细节：</h5><p>1.cmd用管理员身份打开</p>
+<p>2.配置_config.yml文件时记得每个：后都要留一个空格</p>
+<h4 id="1-在hexo-d-的时候出现-Error-Spawn-failed"><a href="#1-在hexo-d-的时候出现-Error-Spawn-failed" class="headerlink" title="1.在hexo d 的时候出现 Error: Spawn failed"></a>1.在hexo d 的时候出现 Error: Spawn failed</h4><h5 id="Solution1"><a href="#Solution1" class="headerlink" title="Solution1:"></a>Solution1:</h5><p>在创建的blog文件夹（即最早建的最大的文件夹）中找到_config.yml，把deploy板块中的repository换成ssh地址</p>
+<p>github的仓库ssh地址如图所示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repository: 此处填ssh地址</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\69091\AppData\Roaming\Typora\typora-user-images\image-20211126093214988.png" alt="image-20211126093214988"></p>
+<p>如果没有添加过密钥，则前往GitHub的个人设置（点击右上角头像旁边的小三角—&gt;settings)，点击SSH and GPG;在本地通过git生成密钥后再复制并添加到ssh keys中即可。</p>
+<p><img src="C:\Users\69091\AppData\Roaming\Typora\typora-user-images\image-20211126093728626.png" alt="image-20211126093728626"></p>
+<h5 id="solution-2："><a href="#solution-2：" class="headerlink" title="solution 2："></a>solution 2：</h5><p>还是在blog文件夹下，删除名为.deploy_git的文件夹</p>
+<p>在命令行中执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br></pre></td></tr></table></figure>
+
+<p>然后再走一遍流程</p>
+<p>hexo c</p>
+<p>hexo g</p>
+<p>hexo d</p>
+<h4 id="2-在git-clone之后向上git-push的时候出现Error-Failed-connect-to-github-com-443"><a href="#2-在git-clone之后向上git-push的时候出现Error-Failed-connect-to-github-com-443" class="headerlink" title="2.在git clone之后向上git push的时候出现Error: Failed connect to github.com:443;"></a>2.在git clone之后向上git push的时候出现Error: Failed connect to github.com:443;</h4><h4 id="或fatal-unable-to-access-…-Failed-to-connect-to-github-com-port-443"><a href="#或fatal-unable-to-access-…-Failed-to-connect-to-github-com-port-443" class="headerlink" title="或fatal: unable to access … :Failed to connect to github.com port 443:"></a>或fatal: unable to access … :Failed to connect to github.com port 443:</h4><p>source:<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45698935/article/details/106599630?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-0.essearch_pc_relevant&spm=1001.2101.3001.4242.1">解决git push时出现Failed to connect to github.com port 443: Timed out_稚与的博客-CSDN博客</a></p>
+<h5 id="solution-1"><a href="#solution-1" class="headerlink" title="solution 1:"></a>solution 1:</h5><p>打开/etc/hosts文件，将github.com对应的行屏蔽掉.。</p>
+<p>hosts的文件位置如下：</p>
+<p><img src="C:\Users\69091\AppData\Roaming\Typora\typora-user-images\image-20211126100907640.png" alt="image-20211126100907640"></p>
+<p>在github.com 相关行前面加#即可。</p>
+<p><img src="C:\Users\69091\AppData\Roaming\Typora\typora-user-images\image-20211126101312347.png" alt="image-20211126101312347"></p>
+<h5 id="solution-2"><a href="#solution-2" class="headerlink" title="solution 2:"></a>solution 2:</h5><p>1.查询是否使用代理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy</span><br><span class="line">git config --global https.proxy</span><br><span class="line">或者</span><br><span class="line">env|grep -I proxy</span><br></pre></td></tr></table></figure>
+
+<p>如果查询时二者均无返回信息，则说明此方法不适用。</p>
+<p>2.取消代理设置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-Hexo启动页面显示extends-includes-layout-pug-block-content-include-includes-recent-posts-pug-include"><a href="#3-Hexo启动页面显示extends-includes-layout-pug-block-content-include-includes-recent-posts-pug-include" class="headerlink" title="3.Hexo启动页面显示extends includes/layout.pug block content include includes/recent-posts.pug include"></a>3.Hexo启动页面显示extends includes/layout.pug block content include includes/recent-posts.pug include</h4><h5 id="solution"><a href="#solution" class="headerlink" title="solution:"></a>solution:</h5><p>执行如下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive</span><br></pre></td></tr></table></figure>
+
+<p>再通过 hexo c清楚缓存</p>
+<p>hexo g生成静态文件即可。</p>
+<h4 id="4-hexo-d命令报错：ERROR-Deployer-not-found-git"><a href="#4-hexo-d命令报错：ERROR-Deployer-not-found-git" class="headerlink" title="4.hexo d命令报错：ERROR Deployer not found: git"></a>4.hexo d命令报错：ERROR Deployer not found: git</h4><h5 id="solution："><a href="#solution：" class="headerlink" title="solution："></a>solution：</h5><p>安装<code>hexo-deployer-git</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>在<code>_config.yml</code>配置中将<code>deploy</code>的<code>type</code>由<code>github</code>改为<code>git</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:YOUR_ID/YOUR_ID.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-hexo本地效果正常，部署后丢失css样式"><a href="#5-hexo本地效果正常，部署后丢失css样式" class="headerlink" title="5.hexo本地效果正常，部署后丢失css样式"></a>5.hexo本地效果正常，部署后丢失css样式</h4><h5 id="solution-x"><a href="#solution-x" class="headerlink" title="solution x:"></a>solution x:</h5><p>其实这个问题不同的情况对应不同的措施，而我花了整整一天，试了大部分网上能找到的方法，也没找到对我可行的方案: (，最后是整个重新制作才成功避开了这个问题。</p>
+<p>个人建议是把blog目录下的 _config.yml和hexo目录下的 _config.yml统一修改。</p>
+<p>再列举一些部分反馈表示可行的办法：</p>
+<h5 id="solution-1-1"><a href="#solution-1-1" class="headerlink" title="solution 1:"></a>solution 1:</h5><h6 id="source-hexo部署博客没有样式等问题-青空的博客-CSDN博客-hexo没有样式"><a href="#source-hexo部署博客没有样式等问题-青空的博客-CSDN博客-hexo没有样式" class="headerlink" title="source:hexo部署博客没有样式等问题_青空的博客-CSDN博客_hexo没有样式"></a>source:<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46187747/article/details/104575042">hexo部署博客没有样式等问题_青空的博客-CSDN博客_hexo没有样式</a></h6><p>在更目录下的<code>_config.yml</code>文件里的<code>url</code>和<code>root</code>一定要设置</p>
+<p>example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">url: https://gitee.com/username/bb      //填的是你的部署的地址</span><br><span class="line">root: /bb/                              //填的是url最后一个斜杠后的那个地址</span><br></pre></td></tr></table></figure>
+
+<p>再重新执行命令<code>hexo clean</code>，<code>hexo g</code></p>
+<h5 id="solution-2-1"><a href="#solution-2-1" class="headerlink" title="solution 2:"></a>solution 2:</h5><h6 id="source-hexo博客在本地可以正常预览-部署到github上后为什么无法显示样式-只有内容呢？-知乎-zhihu-com"><a href="#source-hexo博客在本地可以正常预览-部署到github上后为什么无法显示样式-只有内容呢？-知乎-zhihu-com" class="headerlink" title="source:hexo博客在本地可以正常预览,部署到github上后为什么无法显示样式,只有内容呢？ - 知乎 (zhihu.com)"></a>source:<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/319817323">hexo博客在本地可以正常预览,部署到github上后为什么无法显示样式,只有内容呢？ - 知乎 (zhihu.com)</a></h6><p>原因可能是设置的路径的问题导致css未加载。可能你的博客并不是在github库的根目录下，也就是说你建的库可能是 <a href="https://link.zhihu.com/?target=http://yourname.github.io/">http://yourname.github.io/</a>文件名/ 里面</p>
+<p>解决方法是，在hexo配置文件 _config.yml内，找到 #URL 这个配置项，里面设置url和root跟目录的位置。比如我的站点路径是 <a href="https://link.zhihu.com/?target=https://xxxxxx.github.io/blog/">https://xxxxxx.github.io/blog/</a> 那么，将root设置为『/blog』。</p>
+<p>保存后依次执行：</p>
+<ul>
+<li>hexo clean （清空本地导出的博客）</li>
+<li>hexo g (重新生成)</li>
+<li>hexo d 发布到github上</li>
+</ul>
+<p>应该就没问题了。</p>
+<h5 id="solution-3"><a href="#solution-3" class="headerlink" title="solution 3:"></a>solution 3:</h5><h6 id="source-hexo博客在本地可以正常预览-部署到github上后为什么无法显示样式-只有内容呢？-知乎-zhihu-com-1"><a href="#source-hexo博客在本地可以正常预览-部署到github上后为什么无法显示样式-只有内容呢？-知乎-zhihu-com-1" class="headerlink" title="source:hexo博客在本地可以正常预览,部署到github上后为什么无法显示样式,只有内容呢？ - 知乎 (zhihu.com)"></a>source:<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/319817323">hexo博客在本地可以正常预览,部署到github上后为什么无法显示样式,只有内容呢？ - 知乎 (zhihu.com)</a></h6><p>在GitHub的目的仓库新建一个分支，将public文件夹推到这个新建的分支；</p>
+<p>master保存代码，新建分支保存编译后的public文件夹</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Ray-ling7</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/11/26/hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">http://example.com/2021/11/26/hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/Solution/">Solution</a></div><div class="post_share"><div class="social-share" data-image="/img/blogb.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/11/21/%E5%93%81%E4%BC%98%E8%B4%ADcss%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%88%B6%E4%BD%9C%20%E5%8D%9A%E5%AE%A22/"><img class="next-cover" src="/img/blogb.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">品优购css静态网页制作2</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.i7GYb_vDEcvXOqLFJyobtgHaGL?w=231&amp;h=193&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.25&amp;pid=1.7" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ray-ling7</div><div class="author-info__description">你好哇:D</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%BB%86%E8%8A%82%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">几个需要注意的细节：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%9C%A8hexo-d-%E7%9A%84%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0-Error-Spawn-failed"><span class="toc-number"></span> <span class="toc-text">1.在hexo d 的时候出现 Error: Spawn failed</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Solution1"><span class="toc-number">1.</span> <span class="toc-text">Solution1:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#solution-2%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">solution 2：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%9C%A8git-clone%E4%B9%8B%E5%90%8E%E5%90%91%E4%B8%8Agit-push%E7%9A%84%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0Error-Failed-connect-to-github-com-443"><span class="toc-number"></span> <span class="toc-text">2.在git clone之后向上git push的时候出现Error: Failed connect to github.com:443;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%96fatal-unable-to-access-%E2%80%A6-Failed-to-connect-to-github-com-port-443"><span class="toc-number"></span> <span class="toc-text">或fatal: unable to access … :Failed to connect to github.com port 443:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#solution-1"><span class="toc-number">1.</span> <span class="toc-text">solution 1:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#solution-2"><span class="toc-number">2.</span> <span class="toc-text">solution 2:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Hexo%E5%90%AF%E5%8A%A8%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BAextends-includes-layout-pug-block-content-include-includes-recent-posts-pug-include"><span class="toc-number"></span> <span class="toc-text">3.Hexo启动页面显示extends includes&#x2F;layout.pug block content include includes&#x2F;recent-posts.pug include</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#solution"><span class="toc-number">1.</span> <span class="toc-text">solution:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-hexo-d%E5%91%BD%E4%BB%A4%E6%8A%A5%E9%94%99%EF%BC%9AERROR-Deployer-not-found-git"><span class="toc-number"></span> <span class="toc-text">4.hexo d命令报错：ERROR Deployer not found: git</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#solution%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">solution：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-hexo%E6%9C%AC%E5%9C%B0%E6%95%88%E6%9E%9C%E6%AD%A3%E5%B8%B8%EF%BC%8C%E9%83%A8%E7%BD%B2%E5%90%8E%E4%B8%A2%E5%A4%B1css%E6%A0%B7%E5%BC%8F"><span class="toc-number"></span> <span class="toc-text">5.hexo本地效果正常，部署后丢失css样式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#solution-x"><span class="toc-number">1.</span> <span class="toc-text">solution x:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#solution-1-1"><span class="toc-number">2.</span> <span class="toc-text">solution 1:</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#source-hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%B2%A1%E6%9C%89%E6%A0%B7%E5%BC%8F%E7%AD%89%E9%97%AE%E9%A2%98-%E9%9D%92%E7%A9%BA%E7%9A%84%E5%8D%9A%E5%AE%A2-CSDN%E5%8D%9A%E5%AE%A2-hexo%E6%B2%A1%E6%9C%89%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">source:hexo部署博客没有样式等问题_青空的博客-CSDN博客_hexo没有样式</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#solution-2-1"><span class="toc-number">3.</span> <span class="toc-text">solution 2:</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#source-hexo%E5%8D%9A%E5%AE%A2%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%8F%AF%E4%BB%A5%E6%AD%A3%E5%B8%B8%E9%A2%84%E8%A7%88-%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A%E5%90%8E%E4%B8%BA%E4%BB%80%E4%B9%88%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%A0%B7%E5%BC%8F-%E5%8F%AA%E6%9C%89%E5%86%85%E5%AE%B9%E5%91%A2%EF%BC%9F-%E7%9F%A5%E4%B9%8E-zhihu-com"><span class="toc-number">3.1.</span> <span class="toc-text">source:hexo博客在本地可以正常预览,部署到github上后为什么无法显示样式,只有内容呢？ - 知乎 (zhihu.com)</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#solution-3"><span class="toc-number">4.</span> <span class="toc-text">solution 3:</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#source-hexo%E5%8D%9A%E5%AE%A2%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%8F%AF%E4%BB%A5%E6%AD%A3%E5%B8%B8%E9%A2%84%E8%A7%88-%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A%E5%90%8E%E4%B8%BA%E4%BB%80%E4%B9%88%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%A0%B7%E5%BC%8F-%E5%8F%AA%E6%9C%89%E5%86%85%E5%AE%B9%E5%91%A2%EF%BC%9F-%E7%9F%A5%E4%B9%8E-zhihu-com-1"><span class="toc-number">4.1.</span> <span class="toc-text">source:hexo博客在本地可以正常预览,部署到github上后为什么无法显示样式,只有内容呢？ - 知乎 (zhihu.com)</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/11/26/hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="hexo+github搭建个人博客网站问题汇总和解决方法"><img src="/img/blogb.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo+github搭建个人博客网站问题汇总和解决方法"/></a><div class="content"><a class="title" href="/2021/11/26/hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="hexo+github搭建个人博客网站问题汇总和解决方法">hexo+github搭建个人博客网站问题汇总和解决方法</a><time datetime="2021-11-26T03:41:17.225Z" title="Created 2021-11-26 11:41:17">2021-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/21/%E5%93%81%E4%BC%98%E8%B4%ADcss%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%88%B6%E4%BD%9C%20%E5%8D%9A%E5%AE%A22/" title="品优购css静态网页制作2"><img src="/img/blogb.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="品优购css静态网页制作2"/></a><div class="content"><a class="title" href="/2021/11/21/%E5%93%81%E4%BC%98%E8%B4%ADcss%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%88%B6%E4%BD%9C%20%E5%8D%9A%E5%AE%A22/" title="品优购css静态网页制作2">品优购css静态网页制作2</a><time datetime="2021-11-21T04:53:23.549Z" title="Created 2021-11-21 12:53:23">2021-11-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/21/%E5%93%81%E4%BC%98%E8%B4%ADcss%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%88%B6%E4%BD%9C%20%E5%8D%9A%E5%AE%A21/" title="品优购css静态网页制作1"><img src="/img/blogb.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="品优购css静态网页制作1"/></a><div class="content"><a class="title" href="/2021/11/21/%E5%93%81%E4%BC%98%E8%B4%ADcss%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%88%B6%E4%BD%9C%20%E5%8D%9A%E5%AE%A21/" title="品优购css静态网页制作1">品优购css静态网页制作1</a><time datetime="2021-11-21T04:53:23.544Z" title="Created 2021-11-21 12:53:23">2021-11-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/21/javascript%E6%91%98%E8%AE%B0x/" title="javascript摘记x"><img src="/img/blogb.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javascript摘记x"/></a><div class="content"><a class="title" href="/2021/11/21/javascript%E6%91%98%E8%AE%B0x/" title="javascript摘记x">javascript摘记x</a><time datetime="2021-11-21T04:53:20.665Z" title="Created 2021-11-21 12:53:20">2021-11-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/21/BFC%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A4%E7%9F%A5/" title="BFC的简单认知"><img src="/img/blogb.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BFC的简单认知"/></a><div class="content"><a class="title" href="/2021/11/21/BFC%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A4%E7%9F%A5/" title="BFC的简单认知">BFC的简单认知</a><time datetime="2021-11-21T04:53:19.280Z" title="Created 2021-11-21 12:53:19">2021-11-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Ray-ling7</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
